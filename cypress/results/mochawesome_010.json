@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-12-05T09:46:29.302Z",
+    "end": "2021-12-05T09:46:44.669Z",
+    "duration": 15367,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3918b685-c598-466a-99c0-bb407e3f96fc",
+      "title": "",
+      "fullFile": "cypress/integration/explore_youtube.spec.js",
+      "file": "cypress/integration/explore_youtube.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3b66eeeb-424a-4e43-ac79-bb494ee0434b",
+          "title": "explore youbtube",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "visit youtube",
+              "fullTitle": "explore youbtube visit youtube",
+              "timedOut": null,
+              "duration": 13392,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.youtube.com');\ncy.url().should('include', 'youtube.com');\ncy.contains('Music').click();\ncy.contains('Music').parent().should('have.attr', 'aria-selected', 'true');\ncy.get('input[name=\"search_query\"]').type('Taylor Swift').should('have.value', 'Taylor Swift');\ncy.get('#search-icon-legacy').click();\ncy.location('href').should('include', '/results?search_query=Taylor+Swift');\ncy.contains('Taylor Swift - All Too Well: The Short Film').click();\ncy.get('#container > h1 > yt-formatted-string').should('have.text', 'Taylor Swift - All Too Well: The Short Film');\ncy.get('button[aria-label=\"Pause (k)\"]').click().should('have.attr', 'aria-label', 'Play (k)'); // cy.get('button[aria-label=\"Play (k)\"]').should('have.attr','title','Play (k)')\ncy.get('a[title=\"Next (SHIFT+n)\"]').click();\ncy.get('#container > h1 > yt-formatted-string').should('not.have.text', 'Taylor Swift - All Too Well: The Short Film');\ncy.get('#guide-button').click();\ncy.get('#sections').should('be.visible');\ncy.get('a[title=\"Home\"]').eq(0).click();\ncy.contains('All').parent().should('have.attr', 'aria-selected', 'true');",
+              "err": {},
+              "uuid": "86fbdabd-e91c-437d-bfed-5f46c2dc76b8",
+              "parentUUID": "3b66eeeb-424a-4e43-ac79-bb494ee0434b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "86fbdabd-e91c-437d-bfed-5f46c2dc76b8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 13392,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": "false",
+        "html": "true",
+        "json": "true"
+      },
+      "version": "6.0.1"
+    }
+  }
+}
