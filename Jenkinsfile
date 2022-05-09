@@ -1,13 +1,15 @@
 pipeline{
     agent any
         stages {
-            stage('build and test') {
+            stage('build') {
                 // environment {
                 //     CYPRESS_RECORD_KEY = credentials('cypress-record-key')
                 // }
                 steps {
-                    sh 'npm ci'
-                    sh "npm run test:ci:record"
+                    sh 'npm i'
+                }
+                steps {
+                    sh "npm run test"
                 }
             }
         }
